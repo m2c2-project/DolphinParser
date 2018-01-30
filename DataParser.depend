@@ -1,0 +1,97 @@
+# depslib dependency file v1.0
+1497906592 source:d:\projects\dolphin\data_parser\dataparser\data.cpp
+	"Data.h"
+
+1497990582 d:\projects\dolphin\data_parser\dataparser\data.h
+	"main.h"
+
+1491427405 d:\projects\dolphin\data_parser\dataparser\main.h
+	"KString.h"
+	"GList.h"
+	"GMap.h"
+	"KReader.h"
+	"KWriter.h"
+
+1497641747 d:\projects\dolphin\data_parser\dataparser\kstring.h
+	<string>
+	<cstring>
+	<iostream>
+	<cstdio>
+	<cstdarg>
+	<cstdlib>
+	"GList.h"
+
+1371837703 d:\projects\dolphin\data_parser\dataparser\glist.h
+	<vector>
+
+1422313200 d:\projects\dolphin\data_parser\dataparser\gmap.h
+	"GList.h"
+
+1498582742 source:d:\projects\dolphin\data_parser\dataparser\main.cpp
+	<iostream>
+	"main.h"
+	"DataReader.h"
+	<Direct.h>
+	"DataSettings.h"
+
+1497893249 source:d:\projects\dolphin\data_parser\dataparser\datareader.cpp
+	"DataReader.h"
+	"Data.h"
+	"DataFile.h"
+
+1497990812 d:\projects\dolphin\data_parser\dataparser\datareader.h
+	"main.h"
+
+1491588661 d:\projects\dolphin\data_parser\dataparser\kreader.h
+	"GList.h"
+	<fstream>
+	<sys/types.h>
+	<sys/stat.h>
+	"dirent.h"
+
+1497473128 d:\projects\dolphin\data_parser\dataparser\kwriter.h
+	<fstream>
+	<ctime>
+
+1497645360 source:d:\projects\dolphin\data_parser\dataparser\datareader_gamedir.cpp
+	"DataReader.h"
+	"Data.h"
+	"DataFile.h"
+
+1498582920 source:d:\projects\dolphin\data_parser\dataparser\datareader_writer.cpp
+	"DataReader.h"
+	"Data.h"
+	"DataFile.h"
+	"DataSettings.h"
+
+1497982267 source:d:\projects\dolphin\data_parser\dataparser\datareader_writeseparate.cpp
+	"DataReader.h"
+	"Data.h"
+	"DataFile.h"
+	"DataSettings.h"
+
+1497991870 source:d:\projects\dolphin\data_parser\dataparser\datafile.cpp
+	"DataFile.h"
+	"Data.h"
+	"DataSettings.h"
+
+1497990582 d:\projects\dolphin\data_parser\dataparser\datafile.h
+	"main.h"
+
+1497906394 source:d:\projects\dolphin\data_parser\dataparser\datareader_calcextradata.cpp
+	"DataReader.h"
+	"Data.h"
+	"KWriter.h"
+	"DataFile.h"
+
+1498582589 source:d:\projects\dolphin\data_parser\dataparser\datareader_readsettings.cpp
+	"DataReader.h"
+	"KReader.h"
+	"DataSettings.h"
+
+1498582538 d:\projects\dolphin\data_parser\dataparser\datasettings.h
+	"main.h"
+
+1498582538 source:d:\projects\dolphin\data_parser\dataparser\datasettings.cpp
+	"DataSettings.h"
+
