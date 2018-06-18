@@ -12,31 +12,58 @@ using namespace std;
 #include "DataSettings.h"
 
 
-int main()
+int main(int argc, char* argv[])
 {
 
     DataReader::ReadSettingsFile("parser_settings.txt");
 
 
 
-    cout << "Welcome to the Survey Dolphin Data Parser!" << endl;
-
-    cout << "Please enter the directory of the data you want to parse: (enter nothing to use this directory)" << endl;
-
-    std::string sDir;
-
-    getline(std::cin, sDir);
-
-    KString selectDir = KString(sDir);
 
 
+     cout << "Welcome to the Survey Dolphin Data Parser!" << endl;
 
-    if (!(selectDir == "") && _chdir(selectDir.c_str()) != 0)
+
+    if (argc >= 3)
     {
-     cout << endl << "Cannot find directory!" << endl;
-     system("pause");
-     return 0;
+     KString command = KString(argv[1]);
+     KString cdir = KString(argv[2]);
+
+     if (command == "dir")
+     {
+      if (!(cdir == "") && _chdir(cdir.c_str()) != 0)
+      {
+       cout << endl << "Cannot find directory:" << cdir.c_str() << "!" << endl;
+       system("pause");
+       return 0;
+      }
+     }
     }
+    else
+    {
+     cout << "Please enter the directory of the data you want to parse: (enter nothing to use this directory)" << endl;
+
+
+     std::string sDir;
+
+     getline(std::cin, sDir);
+
+     KString selectDir = KString(sDir);
+
+       if (!(selectDir == "") && _chdir(selectDir.c_str()) != 0)
+     {
+      cout << endl << "Cannot find directory!" << endl;
+      system("pause");
+      return 0;
+     }
+
+    }
+
+
+
+
+
+
    // _chdir("D:\\projects\\dolphin\\files\\test_data\\UploaderTrial_17_6_14");
 
 

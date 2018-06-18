@@ -27,7 +27,7 @@ void DataReader::ReadSettingsFile(KString filename)
    {
      DataSettings::NO_DATA = val;
    }
-   else if (varName == "delimeter")
+   else if (varName == "delimiter")
    {
      DataSettings::DELIMETER = val;
    }
