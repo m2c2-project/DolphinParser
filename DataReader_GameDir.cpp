@@ -5,6 +5,8 @@
 
 #include "DataFile.h"
 
+#include "GameData.h"
+
 using namespace std;
 
 void DataReader::ReadDirectory(KString dirPath)

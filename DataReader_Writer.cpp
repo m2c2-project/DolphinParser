@@ -7,12 +7,15 @@
 
 #include "DataSettings.h"
 
+#include "GameData.h"
+
 
 using namespace std;
 
   void DataReader::WriteAll()
   {
-
+      // this function is only used when the data is combined.
+      // it writes all the survey and game data from every pack into one export file.
 
       // write headers
 

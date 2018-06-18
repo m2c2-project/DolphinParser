@@ -4,6 +4,7 @@
 
 #include "DataFile.h"
 
+#include "GameData.h"
 
 #include "Data.h"
 

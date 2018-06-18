@@ -5,7 +5,7 @@
 		<Option title="DataParser" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
-		<Option virtualFolders="C\;C\Tools\;" />
+		<Option virtualFolders="C\;C\Tools\;C\DataFile\;C\DataReader\;C\DataSettings\;C\Data\;C\GameData\;" />
 		<Build>
 			<Target title="Debug">
 				<Option output="bin/Debug/DataParser" prefix_auto="1" extension_auto="1" />
@@ -34,36 +34,56 @@
 			<Add option="-fexceptions" />
 		</Compiler>
 		<Unit filename="Data.cpp">
-			<Option virtualFolder="C/" />
+			<Option virtualFolder="C/Data/" />
 		</Unit>
 		<Unit filename="Data.h">
-			<Option virtualFolder="C/" />
+			<Option virtualFolder="C/Data/" />
 		</Unit>
-		<Unit filename="DataFile.cpp" />
-		<Unit filename="DataFile.h" />
+		<Unit filename="DataFile.cpp">
+			<Option virtualFolder="C/DataFile/" />
+		</Unit>
+		<Unit filename="DataFile.h">
+			<Option virtualFolder="C/DataFile/" />
+		</Unit>
 		<Unit filename="DataReader.cpp">
-			<Option virtualFolder="C/" />
+			<Option virtualFolder="C/DataReader/" />
 		</Unit>
 		<Unit filename="DataReader.h">
-			<Option virtualFolder="C/" />
+			<Option virtualFolder="C/DataReader/" />
 		</Unit>
-		<Unit filename="DataReader_CalcExtraData.cpp" />
+		<Unit filename="DataReader_CalcExtraData.cpp">
+			<Option virtualFolder="C/DataReader/" />
+		</Unit>
 		<Unit filename="DataReader_GameDir.cpp">
 			<Option compilerVar="CC" />
-			<Option virtualFolder="C/" />
+			<Option virtualFolder="C/DataReader/" />
 		</Unit>
-		<Unit filename="DataReader_ReadSettings.cpp" />
-		<Unit filename="DataReader_WriteSeparate.cpp" />
+		<Unit filename="DataReader_ReadSettings.cpp">
+			<Option virtualFolder="C/DataReader/" />
+		</Unit>
+		<Unit filename="DataReader_WriteSeparate.cpp">
+			<Option virtualFolder="C/DataReader/" />
+		</Unit>
 		<Unit filename="DataReader_Writer.cpp">
-			<Option virtualFolder="C/" />
+			<Option virtualFolder="C/DataReader/" />
 		</Unit>
-		<Unit filename="DataSettings.cpp" />
-		<Unit filename="DataSettings.h" />
+		<Unit filename="DataSettings.cpp">
+			<Option virtualFolder="C/DataSettings/" />
+		</Unit>
+		<Unit filename="DataSettings.h">
+			<Option virtualFolder="C/DataSettings/" />
+		</Unit>
 		<Unit filename="GList.h">
 			<Option virtualFolder="C/Tools/" />
 		</Unit>
 		<Unit filename="GMap.h">
 			<Option virtualFolder="C/Tools/" />
+		</Unit>
+		<Unit filename="GameData.cpp">
+			<Option virtualFolder="C/GameData/" />
+		</Unit>
+		<Unit filename="GameData.h">
+			<Option virtualFolder="C/GameData/" />
 		</Unit>
 		<Unit filename="KReader.h">
 			<Option virtualFolder="C/Tools/" />
