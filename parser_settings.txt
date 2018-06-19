@@ -1,4 +1,4 @@
 blankdata=.
-delimeter=|
+delimiter=|
 endscreen=thank_you
 combinefiles=0
