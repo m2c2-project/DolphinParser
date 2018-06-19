@@ -256,6 +256,12 @@
                  //  system("PAUSE");
 
                    KString writeval = gameData->dataLineMap[j]->Get2(completeHeaderList[k]);
+                   if (writeval == "")
+                   {
+                    //std::cout << DataSettings::NO_DATA.c_str() << "\n";
+                    //system("PAUSE");
+                    writeval = DataSettings::NO_DATA;
+                   }
                    writer.WriteFile(writeval);
                    if (k < completeHeaderList.GetSize()-1){writer.WriteFile(DataSettings::DELIMETER);}
 

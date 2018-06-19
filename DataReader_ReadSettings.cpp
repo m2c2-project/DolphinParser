@@ -37,7 +37,7 @@ void DataReader::ReadSettingsFile(KString filename)
 
      for (int i = 0; i < splitScreen.GetSize(); i++)
      {
-      std::cout << "endscreen:" << splitScreen[i].c_str() << std::endl;
+      //std::cout << "endscreen:" << splitScreen[i].c_str() << std::endl;
       DataSettings::lastScreenList.Add(splitScreen[i]);
      }
 
