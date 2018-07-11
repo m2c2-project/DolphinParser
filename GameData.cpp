@@ -73,6 +73,20 @@
           dataLine.Add(headerLine);*/
 
          }
+         else
+         {
+          // if the header list is already created, only add the non duplicate headers of this line
+          // (each line my have different headers)
+          for (int hA = 0; hA < hList.GetSize(); hA++)
+          {
+           if (!headerList.Contains(hList[hA]))
+           {
+            headerList.Add(hList[hA]);
+           }
+          }
+
+
+         }
 
          // change line to remove all variable headers
 
