@@ -167,7 +167,10 @@
      exitStatus = data->val;
      //std::cout << "Reading exit status: " << exitStatus.c_str() << std::endl;
      // if the DataSettings::lastScreenList doesn't have any entries, any ending screen is considered finished
-     if (exitStatus == "NORMAL" && (DataSettings::lastScreenList.GetSize() == 0 || DataSettings::lastScreenList.Contains(exitScreen)))
+
+     // removed this (exitStatus == "NORMAL" &&) because any exit status can be complete if it reaches the end screen
+     // DataReader_CalcExtraData will check to make sure the same session isn't read twice.
+     if ((DataSettings::lastScreenList.GetSize() == 0 || DataSettings::lastScreenList.Contains(exitScreen)))
      {
       surveyComplete = true;
      }
@@ -178,7 +181,7 @@
      exitScreen = data->val;
       //std::cout << "Reading exit screen: " << exitStatus.c_str() << std::endl;
 
-     if (exitStatus == "NORMAL" && (DataSettings::lastScreenList.GetSize() == 0 || DataSettings::lastScreenList.Contains(exitScreen)))
+     if ( (DataSettings::lastScreenList.GetSize() == 0 || DataSettings::lastScreenList.Contains(exitScreen)))
      {
       surveyComplete = true;
      }
