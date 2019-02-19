@@ -1,4 +1,4 @@
 blankdata=.
 delimiter=|
-endscreen=thank_you
+endscreen=end_screen,thank_you_screen
 combinefiles=0

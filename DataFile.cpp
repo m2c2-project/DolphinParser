@@ -159,9 +159,11 @@
   {
      //std::cout << "*** extra info ****"  << std::endl;
 
-    if (data->name == "ID"){ID = data->val;}
-    else if (data->name == "Session"){sessionID = data->val.GetInt();}
-    else if (data->name == "Exit Status")
+     KString name = KString::ToLower(data->name);
+
+    if (name == "user_id"){ID = data->val;}
+    else if (name == "session_id"){sessionID = data->val.GetInt();}
+    else if (name == "exit status")
     {
 
      exitStatus = data->val;
@@ -176,7 +178,7 @@
      }
 
     }
-    else if (data->name == "Exit Screen")
+    else if (name == "exit screen")
     {
      exitScreen = data->val;
       //std::cout << "Reading exit screen: " << exitStatus.c_str() << std::endl;
@@ -186,7 +188,7 @@
       surveyComplete = true;
      }
     }
-    else if (data->name == "Pack")
+    else if (name == "pack")
     {
      packName = data->val;
     }

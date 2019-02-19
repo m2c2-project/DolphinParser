@@ -17,9 +17,12 @@ int main(int argc, char* argv[])
 
     DataReader::ReadSettingsFile("parser_settings.txt");
 
+   KString upper = "UpPeR CaSe!";
+   KString lower = KString::ToLower(upper);
 
+   char c = tolower('C');
 
-
+     cout << "test:" << c << " " << upper.c_str() << " " << lower.c_str() << endl;
 
      cout << "Welcome to the Survey Dolphin Data Parser!" << endl;
 

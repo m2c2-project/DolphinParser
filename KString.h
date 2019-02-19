@@ -9,6 +9,7 @@
 #include <cstdarg>
 #include <cstdlib>
 #include "GList.h"
+#include <cctype>
 
 #define MAX_KSTRING_CHAR 4096
 
@@ -293,6 +294,19 @@ class KString
        return true;
       }
       return false;
+     }
+
+
+     static KString ToLower(KString kstr)
+     {
+       KString outStr = "";
+       std::string* str = &kstr.str;
+       for (int i = 0; i < str->size(); i++)
+       {
+        outStr.Add(((char)tolower((*str)[i])));
+       }
+
+       return outStr;
      }
 
 
