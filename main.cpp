@@ -22,7 +22,7 @@ int main(int argc, char* argv[])
 
    char c = tolower('C');
 
-     cout << "test:" << c << " " << upper.c_str() << " " << lower.c_str() << endl;
+  //   cout << "test:" << c << " " << upper.c_str() << " " << lower.c_str() << endl;
 
      cout << "Welcome to the Survey Dolphin Data Parser!" << endl;
 

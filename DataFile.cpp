@@ -161,8 +161,8 @@
 
      KString name = KString::ToLower(data->name);
 
-    if (name == "user_id"){ID = data->val;}
-    else if (name == "session_id"){sessionID = data->val.GetInt();}
+    if (name == "user_id" || name == "id"){ID = data->val;}
+    else if (name == "session_id" || name == "session"){sessionID = data->val.GetInt();}
     else if (name == "exit status")
     {
 
