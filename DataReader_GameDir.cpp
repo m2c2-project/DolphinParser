@@ -23,9 +23,9 @@ void DataReader::ReadDirectory(KString dirPath)
 
      GList<KString> split = fileList->Get(i).Split('_');
 
-     if (split.GetSize() > 3)
+     if (split.GetSize() > 4)
      {
-      KString gameName = split[3];
+      KString gameName = split[4];
 
       cout << "found file: " << fileList->Get(i).c_str() << endl;
       //system("PAUSE");

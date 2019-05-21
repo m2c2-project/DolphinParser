@@ -40,7 +40,7 @@
 
       // find all different pack names
 
-      KString varMatch = "Pack";
+      KString varMatch = "Pack_ID";
 
       GList<KString> matchList;
 

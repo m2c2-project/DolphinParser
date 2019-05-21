@@ -161,9 +161,9 @@
 
      KString name = KString::ToLower(data->name);
 
-    if (name == "user_id" || name == "id"){ID = data->val;}
+    if (name == "user_id" || name == "id" || name == "participant_id"){ID = data->val;}
     else if (name == "session_id" || name == "session"){sessionID = data->val.GetInt();}
-    else if (name == "exit status")
+    else if (name == "exit_status")
     {
 
      exitStatus = data->val;
@@ -178,7 +178,7 @@
      }
 
     }
-    else if (name == "exit screen")
+    else if (name == "exit_screen")
     {
      exitScreen = data->val;
       //std::cout << "Reading exit screen: " << exitStatus.c_str() << std::endl;
@@ -188,7 +188,7 @@
       surveyComplete = true;
      }
     }
-    else if (name == "pack")
+    else if (name == "pack" || name == "pack_id")
     {
      packName = data->val;
     }
