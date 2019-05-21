@@ -7,7 +7,13 @@ using namespace std;
 
 #include "DataReader.h"
 
+#ifdef WIN32
 #include <Direct.h>
+#define change_directory _chdir
+#else
+#include "unistd.h"
+#define change_directory chdir
+#endif
 
 #include "DataSettings.h"
 
@@ -34,7 +40,7 @@ int main(int argc, char* argv[])
 
      if (command == "dir")
      {
-      if (!(cdir == "") && _chdir(cdir.c_str()) != 0)
+      if (!(cdir == "") && change_directory(cdir.c_str()) != 0)
       {
        cout << endl << "Cannot find directory:" << cdir.c_str() << "!" << endl;
        system("pause");
@@ -53,7 +59,7 @@ int main(int argc, char* argv[])
 
      KString selectDir = KString(sDir);
 
-       if (!(selectDir == "") && _chdir(selectDir.c_str()) != 0)
+       if (!(selectDir == "") && change_directory(selectDir.c_str()) != 0)
      {
       cout << endl << "Cannot find directory!" << endl;
       system("pause");
