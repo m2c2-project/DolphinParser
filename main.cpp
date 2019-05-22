@@ -10,6 +10,11 @@ using namespace std;
 
 #include "DataSettings.h"
 
+void my_mkdir(const char* path)
+{
+	mkdir(path, 0777);
+}
+
 
 int main(int argc, char* argv[])
 {

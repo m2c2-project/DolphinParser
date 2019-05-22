@@ -15,8 +15,15 @@
 #define make_directory _mkdir
 #else
 #include "unistd.h"
+
 #define change_directory chdir
-#define make_directory mkdir
+#define make_directory my_mkdir
+
+#ifndef MAKEDIR_FH
+#define MAKEDIR_FH 1
+void my_mkdir(const char* path);
+#endif
+
 #endif
 
 #endif
