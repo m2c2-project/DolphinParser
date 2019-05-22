@@ -85,7 +85,7 @@
 
        // write files separately for each pack name
 
-       writer.OpenWriteFile(KString("%s\\%s_%s.txt", outDir.c_str(), packName.c_str(), date.c_str()), false);
+       writer.OpenWriteFile(KString("%s/%s_%s.txt", outDir.c_str(), packName.c_str(), date.c_str()), false);
 
        for (int i = 0; i < dataFileListX.GetSize(); i++)
        {
@@ -192,7 +192,7 @@
 
 
 
-       writer.OpenWriteFile(KString("%s\\gamedata_%s_%s.txt", outDir.c_str(), gameTitle.c_str(), date.c_str()), false);
+       writer.OpenWriteFile(KString("%s/gamedata_%s_%s.txt", outDir.c_str(), gameTitle.c_str(), date.c_str()), false);
       // writer.WriteFile("s");
 
     //   system("PAUSE");

@@ -58,7 +58,7 @@ using namespace std;
 
 
 
-    writer.OpenWriteFile(KString("%s\\extraInfo_%s.txt", outDir.c_str(),  date.c_str()), false);
+    writer.OpenWriteFile(KString("%s/extraInfo_%s.txt", outDir.c_str(),  date.c_str()), false);
 
     cout << "write extra files" << endl;
 
