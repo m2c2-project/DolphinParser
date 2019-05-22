@@ -10,10 +10,13 @@ using namespace std;
 
 #include "DataSettings.h"
 
+
+#ifndef WIN32 
 void my_mkdir(const char* path)
 {
 	mkdir(path, 0777);
 }
+#endif
 
 
 int main(int argc, char* argv[])
