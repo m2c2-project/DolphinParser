@@ -101,7 +101,7 @@
 1558536516 d:\projects\dolphin_parser\data.h
 	"main.h"
 
-1558537161 d:\projects\dolphin_parser\main.h
+1558539125 d:\projects\dolphin_parser\main.h
 	"KString.h"
 	"GList.h"
 	"GMap.h"
@@ -137,7 +137,7 @@
 	<fstream>
 	<ctime>
 
-1558536516 source:d:\projects\dolphin_parser\datafile.cpp
+1558540540 source:d:\projects\dolphin_parser\datafile.cpp
 	"DataFile.h"
 	"GameData.h"
 	"Data.h"
@@ -146,10 +146,10 @@
 1558536516 d:\projects\dolphin_parser\datafile.h
 	"main.h"
 
-1558536516 d:\projects\dolphin_parser\datasettings.h
+1558540070 d:\projects\dolphin_parser\datasettings.h
 	"main.h"
 
-1558536937 source:d:\projects\dolphin_parser\datareader.cpp
+1558539125 source:d:\projects\dolphin_parser\datareader.cpp
 	"DataReader.h"
 	"Data.h"
 	"DataFile.h"
@@ -163,21 +163,22 @@
 	"KWriter.h"
 	"DataFile.h"
 
-1558536516 source:d:\projects\dolphin_parser\datareader_gamedir.cpp
+1558540282 source:d:\projects\dolphin_parser\datareader_gamedir.cpp
 	"DataReader.h"
 	"Data.h"
 	"DataFile.h"
 	"GameData.h"
+	"DataSettings.h"
 
-1558536516 source:d:\projects\dolphin_parser\datareader_readsettings.cpp
+1558540638 source:d:\projects\dolphin_parser\datareader_readsettings.cpp
 	"DataReader.h"
 	"KReader.h"
 	"DataSettings.h"
 
-1558536516 source:d:\projects\dolphin_parser\datasettings.cpp
+1558540070 source:d:\projects\dolphin_parser\datasettings.cpp
 	"DataSettings.h"
 
-1558537251 source:d:\projects\dolphin_parser\main.cpp
+1558539394 source:d:\projects\dolphin_parser\main.cpp
 	<iostream>
 	"main.h"
 	"DataReader.h"
@@ -190,7 +191,7 @@
 	"DataSettings.h"
 	"GameData.h"
 
-1558537249 source:d:\projects\dolphin_parser\datareader_writeseparate.cpp
+1558541185 source:d:\projects\dolphin_parser\datareader_writeseparate.cpp
 	"DataReader.h"
 	"Data.h"
 	"DataFile.h"

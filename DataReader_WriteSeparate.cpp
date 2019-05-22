@@ -42,7 +42,7 @@
 
       // find all different pack names
 
-      KString varMatch = "Pack_ID";
+      KString varMatch = KString::ToLower(DataSettings::packidVarName);
 
       GList<KString> matchList;
 
@@ -59,7 +59,7 @@
 
               for (int j = 0; j < dataFile->elementList.GetSize(); j++)
               {
-               if (dataFile->elementList[j]->name == varMatch)
+               if (KString::ToLower(dataFile->elementList[j]->name) == varMatch)
                {
                 if (!matchList.Contains(dataFile->elementList[j]->val))
                 {
@@ -98,7 +98,7 @@
         bool found = false;
         for (int j = 0; j < dataFile->elementList.GetSize(); j++)
         {
-         if (dataFile->elementList[j]->name == varMatch && dataFile->elementList[j]->val == packName )
+         if (KString::ToLower(dataFile->elementList[j]->name) == varMatch && dataFile->elementList[j]->val == packName )
          {
           matchFileList.Add(dataFile);
           dataFileListX.Remove(i);

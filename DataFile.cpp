@@ -188,7 +188,7 @@
       surveyComplete = true;
      }
     }
-    else if (name == "pack" || name == "pack_id")
+    else if (name == "pack" || name == "pack_id" || name == KString::ToLower(DataSettings::packidVarName))
     {
      packName = data->val;
     }

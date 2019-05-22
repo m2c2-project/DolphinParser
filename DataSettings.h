@@ -17,6 +17,11 @@ class DataSettings
   static int combineFiles;
 
 
+  static int gameNameSplitIndex;
+
+  static KString packidVarName;
+
+
 };
 
 

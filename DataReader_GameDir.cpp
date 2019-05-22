@@ -7,6 +7,8 @@
 
 #include "GameData.h"
 
+#include "DataSettings.h"
+
 using namespace std;
 
 void DataReader::ReadDirectory(KString dirPath)
@@ -23,9 +25,9 @@ void DataReader::ReadDirectory(KString dirPath)
 
      GList<KString> split = fileList->Get(i).Split('_');
 
-     if (split.GetSize() > 4)
+     if (split.GetSize() > DataSettings::gameNameSplitIndex)
      {
-      KString gameName = split[4];
+      KString gameName = split[DataSettings::gameNameSplitIndex];
 
       cout << "found file: " << fileList->Get(i).c_str() << endl;
       //system("PAUSE");
