@@ -106,7 +106,7 @@ using namespace std;
   {
       KString date = KWriter::GetDate();
 
-      KString outDir = "out/out_";
+      KString outDir = "out\\out_";
 
       outDir.Add(date);
 

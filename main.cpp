@@ -7,13 +7,6 @@ using namespace std;
 
 #include "DataReader.h"
 
-#ifdef WIN32
-#include <Direct.h>
-#define change_directory _chdir
-#else
-#include "unistd.h"
-#define change_directory chdir
-#endif
 
 #include "DataSettings.h"
 
@@ -76,7 +69,9 @@ int main(int argc, char* argv[])
    // _chdir("D:\\projects\\dolphin\\files\\test_data\\UploaderTrial_17_6_14");
 
 
-      system("mkdir out");
+      //system("mkdir out");
+
+      make_directory("out");
 
 
 

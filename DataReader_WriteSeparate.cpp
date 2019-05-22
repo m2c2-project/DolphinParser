@@ -33,9 +33,11 @@
 
 
 
-      KString sCommand = KString("mkdir %s", outDir.c_str());
+//      KString sCommand = KString("mkdir %s", outDir.c_str());
 
-      system(sCommand.c_str());
+  //    system(sCommand.c_str());
+
+     make_directory(outDir.c_str());
 
 
       // find all different pack names
