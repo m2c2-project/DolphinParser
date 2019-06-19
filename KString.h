@@ -178,7 +178,7 @@ class KString
      unsigned int c = str.find(splitStr.c_str());
      while (c != std::string::npos && c != -1)
      {
-     std::cout << "c1:" << c << "\n";
+    
       if (maxSplit > 0 && retList.GetSize() >= maxSplit-1)
       {
        // if the max number of split groups is met, break and return the remaining values in the last element of the list
@@ -189,8 +189,7 @@ class KString
       retList.Add(KString(str.substr(lastC, c-lastC).c_str()));
       lastC = c + splitStr.GetSize();
       c = str.find(splitStr.c_str(),lastC);
-         std::cout << "sizeof c2:" << sizeof(c) << "\n";
-      std::cout << "c2:" << c << ",npos:" << std::string::npos << "\n";
+  
      }
      retList.Add(KString(str.substr(lastC, str.size()-lastC).c_str()));
 
