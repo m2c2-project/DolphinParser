@@ -7,15 +7,32 @@
 
 void DataReader::ReadSettingsFile(KString filename)
 {
- KReader reader;
 
+
+ size_t mynpos = -1;
+ std::cout << "mynpos:" << mynpos << std::endl;
+
+ std::cout << "npos:" << std::string::npos << std::endl;
+ std::cout << "reading settings file 1\n";
+ 
+ std::cout << "size of npos:" << sizeof(std::string::npos) << std::endl;
+std::cout << "size of mynpos:" << sizeof(mynpos) << std::endl;
+
+ KReader reader;
+std::cout << "reading settings file 2\n";
 
  reader.OpenReadFile(filename);
+ std::cout << "reading settings file 3\n";
+ 
 
  while(reader.HasNextLine())
  {
+ 
+ std::cout << "reading settings file 3.5\n";
   KString line = reader.ReadNextLine();
-
+  
+  std::cout << "reading settings file 4:" << line.c_str() << "\n";
+  
   GList<KString> split = line.Split('=', 2);
 
   if (split.GetSize() == 2)
@@ -33,10 +50,13 @@ void DataReader::ReadSettingsFile(KString filename)
    }
    else if (varName == "endscreen")
    {
+   
+    std::cout << "end screen 1:" << val.c_str() << "\n";
      GList<KString> splitScreen = val.Split(",");
-
+std::cout << "end screen 1.5\n";
      for (int i = 0; i < splitScreen.GetSize(); i++)
      {
+      std::cout << "endscreen 2\n";
       //std::cout << "endscreen:" << splitScreen[i].c_str() << std::endl;
       DataSettings::lastScreenList.Add(splitScreen[i]);
      }
@@ -63,6 +83,8 @@ void DataReader::ReadSettingsFile(KString filename)
   }
 
  }
+ 
+  std::cout << "reading settings file 10";
 
  reader.CloseReadFile();
 
@@ -70,7 +92,7 @@ void DataReader::ReadSettingsFile(KString filename)
 
 
 
-
+ std::cout << "reading settings file 2\n";
 
 
 

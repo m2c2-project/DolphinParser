@@ -163,29 +163,7 @@ class KString
 
     GList<KString> Split(char splitChar, int maxSplit = 0)
     {
-     GList<KString> retList;
-
-     std::string str = std::string(c_str());
-
-     int lastC = 0;
-     unsigned int c = str.find(splitChar);
-     while (c != std::string::npos)
-     {
-      if (maxSplit > 0 && retList.GetSize() >= maxSplit-1)
-      {
-       // if the max number of split groups is met, break and return the remaining values in the last element of the list
-       // ex: a string "1:2:3" split at character ':' with maxSplit=2 should return list: {"1","2:3"}
-       break;
-      }
-
-      retList.Add(KString(str.substr(lastC, c-lastC).c_str()));
-      lastC = c+1;
-      c = str.find(splitChar,lastC);
-     }
-     retList.Add(KString(str.substr(lastC, str.size()-lastC).c_str()));
-
-
-     return retList;
+      return Split(KString("%c", splitChar), maxSplit);
 
     }
 
@@ -198,8 +176,9 @@ class KString
 
      int lastC = 0;
      unsigned int c = str.find(splitStr.c_str());
-     while (c != std::string::npos)
+     while (c != std::string::npos && c != -1)
      {
+     std::cout << "c1:" << c << "\n";
       if (maxSplit > 0 && retList.GetSize() >= maxSplit-1)
       {
        // if the max number of split groups is met, break and return the remaining values in the last element of the list
@@ -210,7 +189,8 @@ class KString
       retList.Add(KString(str.substr(lastC, c-lastC).c_str()));
       lastC = c + splitStr.GetSize();
       c = str.find(splitStr.c_str(),lastC);
-
+         std::cout << "sizeof c2:" << sizeof(c) << "\n";
+      std::cout << "c2:" << c << ",npos:" << std::string::npos << "\n";
      }
      retList.Add(KString(str.substr(lastC, str.size()-lastC).c_str()));
 
