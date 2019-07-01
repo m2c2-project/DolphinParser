@@ -26,30 +26,48 @@ int main(int argc, char* argv[])
 
    KString upper = "UpPeR CaSe!";
    KString lower = KString::ToLower(upper);
+   
+   
 
    char c = tolower('C');
 
   //   cout << "test:" << c << " " << upper.c_str() << " " << lower.c_str() << endl;
 
      cout << "Welcome to the Survey Dolphin Data Parser!" << endl;
+     
+     
+     KString setOutDir = "";
+     
+     int paramDirFound = 0; // true when the directory to read was set in the command line params
 
-
-    if (argc >= 3)
+    // scan through params for settings
+    for (int i = 2; i < argc; i = i + 2)
     {
-     KString command = KString(argv[1]);
-     KString cdir = KString(argv[2]);
-
-     if (command == "dir")
-     {
-      if (!(cdir == "") && change_directory(cdir.c_str()) != 0)
-      {
-       cout << endl << "Cannot find directory:" << cdir.c_str() << "!" << endl;
-       system("pause");
-       return 0;
-      }
-     }
+      
+       KString command = KString(argv[i-1]);
+       KString val = KString(argv[i]);
+  
+       if (command == "dir")
+       {
+        if (!(val == "") && change_directory(val.c_str()) != 0)
+        {
+         cout << endl << "Cannot find directory:" << val.c_str() << "!" << endl;
+         system("pause");
+         return 0;
+        }
+        paramDirFound = 1;
+       }
+       else if (command == "out")
+       {
+         setOutDir = val;
+       }
+      
     }
-    else
+    
+  
+    
+    
+    if (!paramDirFound)
     {
      cout << "Please enter the directory of the data you want to parse: (enter nothing to use this directory)" << endl;
 
@@ -79,7 +97,7 @@ int main(int argc, char* argv[])
 
       //system("mkdir out");
 
-      make_directory("out");
+      make_directory(setOutDir.c_str());
 
 
 
@@ -89,9 +107,19 @@ int main(int argc, char* argv[])
    DataReader* dataReader = new DataReader(".");
 
 
+
+
    dataReader->Read();
 
    dataReader->CalculateExtraData();
+   
+   if (!(setOutDir == ""))
+   {
+    
+    cout << "setting out dir" << setOutDir.c_str() << endl;
+    
+    dataReader->SetOutDir(setOutDir);
+   }
 
    if (DataSettings::combineFiles == 0)
    {

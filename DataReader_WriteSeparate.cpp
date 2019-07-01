@@ -31,6 +31,7 @@
 
       KString outDir = GetOutDir();
 
+      std::cout << "final outdir:" << outDir.c_str() << std::endl;
 
 
 //      KString sCommand = KString("mkdir %s", outDir.c_str());

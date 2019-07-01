@@ -26,6 +26,8 @@ class DataElement;
 
 class DataReader
 {
+ private:
+  KString outputDir;
  public:
   DataReader(KString startPath);
   ~DataReader();
@@ -51,8 +53,10 @@ class DataReader
 
   static KString GetEndLine();
 
+  
 
   KString GetOutDir();
+  void SetOutDir(KString dir);
 
 
 

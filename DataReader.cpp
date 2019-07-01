@@ -11,6 +11,7 @@ using namespace std;
   DataReader::DataReader(KString startPath)
   {
     path = startPath;
+    outputDir = "out";
   }
 
   DataReader::~DataReader()
@@ -26,7 +27,7 @@ using namespace std;
 
  void DataReader::AddDataFile(KString filename)
  {
-   // filename should be full path
+   // filename should be full path of data file
   dataFileList.Add(new DataFile(filename));
 
  }
@@ -106,11 +107,20 @@ using namespace std;
   {
       KString date = KWriter::GetDate();
 
-      KString outDir = "out/out_";
+      KString rOutDir = outputDir;
+      
+      rOutDir.Add("/out_");
 
-      outDir.Add(date);
+      rOutDir.Add(date);
 
-      return outDir;
+      return rOutDir;
+  }
+  
+  
+  void DataReader::SetOutDir(KString dir)
+  {
+      outputDir = dir;
+  
   }
 
 
