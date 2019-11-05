@@ -19,7 +19,7 @@ void DataReader::ReadDirectory(KString dirPath)
    {
     bool isDir = !fileList->Get(i).Contains(".");
 
-    if (!isDir && fileList->Get(i).Contains("game_"))
+    if (!isDir && (fileList->Get(i).Contains("game_") ||  fileList->Get(i).Contains("cogtask_")))
     {
      // - found game read game file
 

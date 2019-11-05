@@ -10,8 +10,15 @@ using namespace std;
 
 #include "DataSettings.h"
 
+#ifdef WIN32
+void my_mkdir(const char* path)
+{
+ // WILL NOT MAKE SUB DIRS!
+ _mkdir(path);
+}
+#endif
 
-#ifndef WIN32 
+#ifndef WIN32
 void my_mkdir(const char* path)
 {
 	mkdir(path, 0777);
@@ -26,27 +33,27 @@ int main(int argc, char* argv[])
 
    KString upper = "UpPeR CaSe!";
    KString lower = KString::ToLower(upper);
-   
-   
+
+
 
    char c = tolower('C');
 
   //   cout << "test:" << c << " " << upper.c_str() << " " << lower.c_str() << endl;
 
      cout << "Welcome to the Survey Dolphin Data Parser!" << endl;
-     
-     
-     KString setOutDir = "";
-     
+
+
+     KString setOutDir = "out";
+
      int paramDirFound = 0; // true when the directory to read was set in the command line params
 
     // scan through params for settings
     for (int i = 2; i < argc; i = i + 2)
     {
-      
+
        KString command = KString(argv[i-1]);
        KString val = KString(argv[i]);
-  
+
        if (command == "dir")
        {
         if (!(val == "") && change_directory(val.c_str()) != 0)
@@ -61,12 +68,12 @@ int main(int argc, char* argv[])
        {
          setOutDir = val;
        }
-      
+
     }
-    
-  
-    
-    
+
+
+
+
     if (!paramDirFound)
     {
      cout << "Please enter the directory of the data you want to parse: (enter nothing to use this directory)" << endl;
@@ -112,12 +119,12 @@ int main(int argc, char* argv[])
    dataReader->Read();
 
    dataReader->CalculateExtraData();
-   
+
    if (!(setOutDir == ""))
    {
-    
+
     cout << "setting out dir" << setOutDir.c_str() << endl;
-    
+
     dataReader->SetOutDir(setOutDir);
    }
 
