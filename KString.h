@@ -161,13 +161,13 @@ class KString
      else {return false;}
     }
 
-    GList<KString> Split(char splitChar, int maxSplit = 0)
+    GList<KString> Split(char splitChar, int maxSplit = 0, char ignoreOpen = '{', char ignoreClose = '}')
     {
-      return Split(KString("%c", splitChar), maxSplit);
+      return Split(KString("%c", splitChar), maxSplit, ignoreOpen, ignoreClose);
 
     }
 
-    GList<KString> Split(KString splitStr, int maxSplit = 0)
+    GList<KString> Split(KString splitStr, int maxSplit = 0, char ignoreOpen = '{', char ignoreClose = '}')
     {
      GList<KString> retList;
 
@@ -175,21 +175,54 @@ class KString
 
 
      int lastC = 0;
-     unsigned int c = str.find(splitStr.c_str());
-     while (c != std::string::npos && c != -1)
+     unsigned int c = 0;
+
+     int ignoreLayer = 0;
+     int nextMatch = str.find(splitStr.c_str());
+
+     while (c != std::string::npos && c != -1 && c < str.length())
      {
-    
-      if (maxSplit > 0 && retList.GetSize() >= maxSplit-1)
+      if (c > nextMatch)
       {
-       // if the max number of split groups is met, break and return the remaining values in the last element of the list
-       // ex: a string "1:2:3" split at character ':' with maxSplit=2 should return list: {"1","2:3"}
-       break;
+         nextMatch = str.find(splitStr.c_str(), c);
       }
 
-      retList.Add(KString(str.substr(lastC, c-lastC).c_str()));
-      lastC = c + splitStr.GetSize();
-      c = str.find(splitStr.c_str(),lastC);
-  
+      if (str.c_str()[c] == ignoreOpen)
+      {
+       ignoreLayer++;
+      }
+      else if (str.c_str()[c] == ignoreClose)
+      {
+       ignoreLayer--;
+      }
+
+      if (ignoreLayer > 0)
+      {
+        c++;
+        continue;
+      }
+
+      if (c == nextMatch)
+      {
+
+       if (maxSplit > 0 && retList.GetSize() >= maxSplit-1)
+       {
+        // if the max number of split groups is met, break and return the remaining values in the last element of the list
+        // ex: a string "1:2:3" split at character ':' with maxSplit=2 should return list: {"1","2:3"}
+        break;
+       }
+
+       retList.Add(KString(str.substr(lastC, c-lastC).c_str()));
+       lastC = c + splitStr.GetSize();
+       c = lastC;
+       nextMatch = str.find(splitStr.c_str(),lastC);
+
+      }
+      else
+      {
+       c++;
+      }
+
      }
      retList.Add(KString(str.substr(lastC, str.size()-lastC).c_str()));
 

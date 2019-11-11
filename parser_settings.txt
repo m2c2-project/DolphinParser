@@ -2,5 +2,5 @@ blankdata=.
 delimiter=|
 endscreen=end_screen,thank_you_screen
 combinefiles=0
-gamenamesplit=4
+gamenamesplit=3
 packid_varname=pack_id
