@@ -54,13 +54,19 @@
 
       { // step 1: - cycle through each data file and make a list of pack names (matchList)
 
+
+
              for (int i = 0; i < dataFileList.GetSize(); i++)
              {
               DataFile* dataFile = dataFileList[i];
 
+
+
               for (int j = 0; j < dataFile->elementList.GetSize(); j++)
               {
-               if (KString::ToLower(dataFile->elementList[j]->name) == varMatch)
+                  KString lowerElementName = KString::ToLower(dataFile->elementList[j]->name);
+
+               if (lowerElementName == varMatch || lowerElementName == "pack" || lowerElementName == "pack_id")
                {
                 if (!matchList.Contains(dataFile->elementList[j]->val))
                 {

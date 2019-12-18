@@ -110,7 +110,7 @@
 	<Direct.h>
 	"unistd.h"
 
-1561995322 d:\projects\dolphin_parser\kstring.h
+1573504510 d:\projects\dolphin_parser\kstring.h
 	<string>
 	<cstring>
 	<iostream>
@@ -137,7 +137,7 @@
 	<fstream>
 	<ctime>
 
-1558536940 source:d:\projects\dolphin_parser\datafile.cpp
+1576706333 source:d:\projects\dolphin_parser\datafile.cpp
 	"DataFile.h"
 	"GameData.h"
 	"Data.h"
@@ -178,7 +178,7 @@
 1558537688 source:d:\projects\dolphin_parser\datasettings.cpp
 	"DataSettings.h"
 
-1572983386 source:d:\projects\dolphin_parser\main.cpp
+1572983786 source:d:\projects\dolphin_parser\main.cpp
 	<iostream>
 	"main.h"
 	"DataReader.h"
@@ -191,7 +191,7 @@
 	"DataSettings.h"
 	"GameData.h"
 
-1572982413 source:d:\projects\dolphin_parser\datareader_writeseparate.cpp
+1576706544 source:d:\projects\dolphin_parser\datareader_writeseparate.cpp
 	"DataReader.h"
 	"Data.h"
 	"DataFile.h"

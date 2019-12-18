@@ -18,7 +18,7 @@
    filename = sfilename;
 
    ID = "no_id_set";
-   surveyComplete = false;
+   surveyComplete = true;
    sessionID = -1;
    packName = "no_pack_name_found";
 
@@ -178,7 +178,7 @@
      }
 
     }
-    else if (name == "exit_screen")
+    else if (name == "exit_screen" || name == "exit screen")
     {
      exitScreen = data->val;
       //std::cout << "Reading exit screen: " << exitStatus.c_str() << std::endl;
