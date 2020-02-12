@@ -18,7 +18,7 @@
    filename = sfilename;
 
    ID = "no_id_set";
-   surveyComplete = true;
+   surveyComplete = false;
    sessionID = -1;
    packName = "no_pack_name_found";
 
