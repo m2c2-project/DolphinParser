@@ -19,7 +19,14 @@ void DataReader::ReadDirectory(KString dirPath)
    {
     bool isDir = !fileList->Get(i).Contains(".");
 
-    if (!isDir && (fileList->Get(i).Contains("game_") ||  fileList->Get(i).Contains("cogtask_")))
+
+    GList<KString> fileSplit = fileList->Get(i).Split('_');
+
+    if (fileSplit.GetSize() < 1){continue;}
+
+    KString first = fileSplit[0];
+
+    if (!isDir && (first.Contains("game") ||  first.Contains("cogtask")))
     {
      // - found game read game file
 
@@ -67,7 +74,7 @@ void DataReader::ReadDirectory(KString dirPath)
      }
 
     }
-    else if (!isDir && fileList->Get(i).Contains("data_"))
+    else if (!isDir && first.Contains("data"))
     {
       cout << "found data file: " << fileList->Get(i).c_str() << endl;
 
