@@ -54,7 +54,7 @@ int main(int argc, char* argv[])
        KString command = KString(argv[i-1]);
        KString val = KString(argv[i]);
 
-       if (command == "dir")
+       if (command == "dir" || command == "-d")
        {
         if (!(val == "") && change_directory(val.c_str()) != 0)
         {
@@ -64,7 +64,7 @@ int main(int argc, char* argv[])
         }
         paramDirFound = 1;
        }
-       else if (command == "out")
+       else if (command == "out" || command == "-o")
        {
          setOutDir = val;
        }

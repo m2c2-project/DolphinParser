@@ -26,7 +26,7 @@ void DataReader::ReadDirectory(KString dirPath)
 
     KString first = fileSplit[0];
 
-    if (!isDir && (first.Contains("game") ||  first.Contains("cogtask")))
+    if (!isDir && (first == "game" ||  first == "cogtask"))
     {
      // - found game read game file
 
@@ -74,7 +74,7 @@ void DataReader::ReadDirectory(KString dirPath)
      }
 
     }
-    else if (!isDir && first.Contains("data"))
+    else if (!isDir && first == "data")
     {
       cout << "found data file: " << fileList->Get(i).c_str() << endl;
 
