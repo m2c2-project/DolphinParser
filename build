@@ -1,3 +1,1 @@
-g++ -o dolph_parser Data.cpp DataFile.cpp DataReader_CalcExtraData.cpp DataReader.cpp \
-DataReader_GameDir.cpp DataReader_ReadSettings.cpp DataReader_Writer.cpp \
-DataReader_WriteSeparate.cpp DataSettings.cpp GameData.cpp main.cpp
+g++ -o dolph_parser Data.cpp DataFile.cpp DataReader_CalcExtraData.cpp DataReader.cpp DataReader_GameDir.cpp DataReader_ReadSettings.cpp DataReader_Writer.cpp DataReader_WriteSeparate.cpp DataSettings.cpp GameData.cpp main.cpp
