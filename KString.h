@@ -11,7 +11,7 @@
 #include "GList.h"
 #include <cctype>
 
-#define MAX_KSTRING_CHAR 4096
+#define MAX_KSTRING_CHAR 4096*10
 
 
 class KString
