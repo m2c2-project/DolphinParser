@@ -18,6 +18,8 @@ class GameData
   KString name;
   GList<KString> dataLine;
 
+  char readDelimiter;
+
 
 
   GList<KString> headerList;

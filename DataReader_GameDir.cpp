@@ -84,6 +84,42 @@ void DataReader::ReadDirectory(KString dirPath)
       setFileName.Add(fileList->Get(i));
       AddDataFile(setFileName);
     }
+    else if (!isDir && fileSplit.GetSize() >= 2 && fileSplit[1].Contains("log.txt") && !(fileSplit[0] == "beep"))
+    {
+      //read log files
+
+      cout << "found log file" << fileList->Get(i).c_str() << endl;
+
+     // system("PAUSE");
+
+      KString filePath = KString(dirPath);
+      filePath.Add("/");
+      filePath.Add(fileList->Get(i));
+
+
+      KReader reader;
+      reader.OpenReadFile(filePath);
+
+
+      GameData* gameData = new GameData("log");
+      gameData->readDelimiter = '|';
+
+      while (reader.HasNextLine())
+      {
+       KString line = reader.ReadNextLine();
+       if (!(line == ""))
+       {
+        gameData->AddDataLine(line);
+       }
+      }
+
+      // add the gamedata to the first data file (which stores all game data)
+      dataFileList.Get(0)->gameDataList.Add(gameData);
+
+      reader.CloseReadFile();
+
+
+    }
     else if (isDir)
     {
 

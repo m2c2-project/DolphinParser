@@ -9,6 +9,7 @@
   {
    name = sname;
 
+   readDelimiter = ',';
   }
 
 
@@ -23,11 +24,16 @@
     {
      // first line being entered, see if there are variable names
 
-     GList<KString> entrySplit = line.Split(',');
+     GList<KString> entrySplit = line.Split(readDelimiter);
+
+
+
      if (entrySplit.GetSize() > 0)
      {
-      if (entrySplit[0].Contains(':'))
+      //if (entrySplit[0].Contains(':'))
       {
+
+       int noHeaderCount = 0;
 
        GList<KString> hList;
        GList<KString> valList;
@@ -46,9 +52,14 @@
         }
         else if (valSplit.GetSize() > 0)
         {
+         noHeaderCount++;
+
+         // create a header for the data entry with no header
+          hList.Add(KString("header%d", noHeaderCount));
          // else, add the whole line
          valList.Add(entrySplit[i]);
         }
+
 
        }
 
@@ -114,6 +125,7 @@
 
 
       }
+
      }
 
 
