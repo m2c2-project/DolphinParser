@@ -163,11 +163,12 @@
 	"KWriter.h"
 	"DataFile.h"
 
-1602199229 source:d:\projects\dolphin_parser\datareader_gamedir.cpp
+1602203797 source:d:\projects\dolphin_parser\datareader_gamedir.cpp
 	"DataReader.h"
 	"Data.h"
 	"DataFile.h"
 	"GameData.h"
+	"LogData.h"
 	"DataSettings.h"
 
 1586202997 source:d:\projects\dolphin_parser\datareader_readsettings.cpp
@@ -201,7 +202,13 @@
 1602199193 d:\projects\dolphin_parser\gamedata.h
 	"main.h"
 
-1602198854 source:d:\projects\dolphin_parser\gamedata.cpp
+1602199318 source:d:\projects\dolphin_parser\gamedata.cpp
 	"GameData.h"
 	"DataSettings.h"
+
+1602203822 d:\projects\dolphin_parser\logdata.h
+	"GameData.h"
+
+1602203700 source:d:\projects\dolphin_parser\logdata.cpp
+	"LogData.h"
 

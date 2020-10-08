@@ -97,6 +97,12 @@
 		<Unit filename="KWriter.h">
 			<Option virtualFolder="C/Tools/" />
 		</Unit>
+		<Unit filename="LogData.cpp">
+			<Option virtualFolder="C/GameData/LogData/" />
+		</Unit>
+		<Unit filename="LogData.h">
+			<Option virtualFolder="C/GameData/LogData/" />
+		</Unit>
 		<Unit filename="main.cpp">
 			<Option virtualFolder="C/" />
 		</Unit>

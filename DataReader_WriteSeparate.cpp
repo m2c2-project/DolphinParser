@@ -200,8 +200,16 @@
 
 
 
+       KString cogtaskFilename = KString("%s/cogtaskdata_%s_%s.txt", outDir.c_str(), gameTitle.c_str(), date.c_str());
 
-       writer.OpenWriteFile(KString("%s/cogtaskdata_%s_%s.txt", outDir.c_str(), gameTitle.c_str(), date.c_str()), false);
+       if (gameTitle == "log") // change the file name if it is the log data
+       {
+        cogtaskFilename = KString("%s/log_collection_%s_%s.txt", outDir.c_str(), gameTitle.c_str(), date.c_str());
+       }
+
+
+
+       writer.OpenWriteFile(cogtaskFilename, false);
       // writer.WriteFile("s");
 
     //   system("PAUSE");

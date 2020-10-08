@@ -6,6 +6,7 @@
 #include "DataFile.h"
 
 #include "GameData.h"
+#include "LogData.h"
 
 #include "DataSettings.h"
 
@@ -101,20 +102,19 @@ void DataReader::ReadDirectory(KString dirPath)
       reader.OpenReadFile(filePath);
 
 
-      GameData* gameData = new GameData("log");
-      gameData->readDelimiter = '|';
+      LogData* logData = new LogData(fileSplit[0]);
 
       while (reader.HasNextLine())
       {
        KString line = reader.ReadNextLine();
        if (!(line == ""))
        {
-        gameData->AddDataLine(line);
+        logData->AddDataLine(line);
        }
       }
 
-      // add the gamedata to the first data file (which stores all game data)
-      dataFileList.Get(0)->gameDataList.Add(gameData);
+      // add the logdata to the first data file (which stores all game data)
+      dataFileList.Get(0)->gameDataList.Add(logData);
 
       reader.CloseReadFile();
 
