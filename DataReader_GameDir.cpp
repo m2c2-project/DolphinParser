@@ -20,7 +20,7 @@ void DataReader::ReadDirectory(KString dirPath)
    {
     bool isDir = !fileList->Get(i).Contains(".");
 
-
+    KString filename = fileList->Get(i);
     GList<KString> fileSplit = fileList->Get(i).Split('_');
 
     if (fileSplit.GetSize() < 1){continue;}
@@ -95,8 +95,11 @@ void DataReader::ReadDirectory(KString dirPath)
       setFileName.Add(fileList->Get(i));
       AddDataFile(setFileName);
     }
-    else if (!isDir && fileSplit.GetSize() >= 2 && fileSplit.GetLast().Contains("log.txt") && !(fileSplit[0] == "beep"))
+    else if (!isDir && fileSplit.GetSize() >= 2 && filename.Contains("_log.txt") && !(fileSplit[0] == "beep"))
     {
+      GList<KString> nameSplit = filename.Split("_log.txt");
+      KString participantID = nameSplit.Get(0);
+
       //read log files
 
       cout << "found log file" << fileList->Get(i).c_str() << endl;
@@ -112,7 +115,7 @@ void DataReader::ReadDirectory(KString dirPath)
       reader.OpenReadFile(filePath);
 
 
-      LogData* logData = new LogData(fileSplit[0]);
+      LogData* logData = new LogData(participantID);
 
       while (reader.HasNextLine())
       {

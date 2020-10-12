@@ -2,6 +2,6 @@ blankdata=.
 delimiter=|
 endscreen=end_screen,thank_you
 combinefiles=0
-gamenamesplit=3
+gamenamesplit=4
 #packid_varname should be the variable name of the pack. newer versions should be "pack_id"
 packid_varname=pack_id
