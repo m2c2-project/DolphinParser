@@ -62,6 +62,16 @@ void DataReader::ReadDirectory(KString dirPath)
        }
       }
 
+     // int cogtaskNameI = gameData->headerList.FindElement("cogtask_name");
+     // if (cogtaskNameI > -1)
+      {
+        if (gameData->dataLineMap.GetSize() > 0)
+        {
+          gameData->name = (gameData->dataLineMap.Get(0))->Get2("cogtask_name");
+          gameData->name.Replace(" ", "-");
+        }
+      }
+
       // add the gamedata to the first data file (which stores all game data)
       dataFileList.Get(0)->gameDataList.Add(gameData);
 
@@ -85,7 +95,7 @@ void DataReader::ReadDirectory(KString dirPath)
       setFileName.Add(fileList->Get(i));
       AddDataFile(setFileName);
     }
-    else if (!isDir && fileSplit.GetSize() >= 2 && fileSplit[1].Contains("log.txt") && !(fileSplit[0] == "beep"))
+    else if (!isDir && fileSplit.GetSize() >= 2 && fileSplit.GetLast().Contains("log.txt") && !(fileSplit[0] == "beep"))
     {
       //read log files
 
