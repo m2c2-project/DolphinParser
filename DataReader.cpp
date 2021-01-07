@@ -8,10 +8,13 @@
 
 using namespace std;
 
-  DataReader::DataReader(KString startPath)
+  DataReader::DataReader()
   {
-    path = startPath;
+
     outputDir = "out";
+
+     DataFile* gameFile = new DataFile(""); // create file to store all game data from outside sources (separate folders)
+   dataFileList.Add(gameFile);
   }
 
   DataReader::~DataReader()
@@ -34,18 +37,15 @@ using namespace std;
 
 
 
-  void DataReader::Read()
+  void DataReader::Read(KString path)
   {
    // read the files of the root path and add them to the file list
-
-
-   DataFile* gameFile = new DataFile(""); // create file to store all game data from outside sources (separate folders)
-   dataFileList.Add(gameFile);
-
    ReadDirectory(path);
+  }
 
-
-   // read all the files found
+  void DataReader::FinishRead()
+  {
+       // read all the files found
 
    for (int i = 0; i < dataFileList.GetSize(); i++)
    {
@@ -63,8 +63,6 @@ using namespace std;
    {
      cout << headerList[i].c_str() << KString::GetLineBreak().c_str();
    }
-
-
 
   }
 
@@ -108,19 +106,19 @@ using namespace std;
       KString date = KWriter::GetDate();
 
       KString rOutDir = outputDir;
-      
+
       rOutDir.Add("/out_");
 
       rOutDir.Add(date);
 
       return rOutDir;
   }
-  
-  
+
+
   void DataReader::SetOutDir(KString dir)
   {
       outputDir = dir;
-  
+
   }
 
 

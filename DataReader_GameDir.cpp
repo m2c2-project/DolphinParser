@@ -155,4 +155,7 @@ void DataReader::ReadDirectory(KString dirPath)
 
    }
 
+
+   delete fileList;
+
 }

@@ -31,12 +31,10 @@ int main(int argc, char* argv[])
 
     DataReader::ReadSettingsFile("parser_settings.txt");
 
-   KString upper = "UpPeR CaSe!";
-   KString lower = KString::ToLower(upper);
 
 
 
-   char c = tolower('C');
+
 
   //   cout << "test:" << c << " " << upper.c_str() << " " << lower.c_str() << endl;
 
@@ -47,6 +45,15 @@ int main(int argc, char* argv[])
 
      int paramDirFound = 0; // true when the directory to read was set in the command line params
 
+
+     GList<KString> readDirList;
+
+     // get current working directory
+     char cwd_s[1024];
+     getcwd(cwd_s, sizeof(cwd_s));
+     KString cwd = KString(cwd_s);
+
+
     // scan through params for settings
     for (int i = 2; i < argc; i = i + 2)
     {
@@ -56,13 +63,16 @@ int main(int argc, char* argv[])
 
        if (command == "dir" || command == "-d")
        {
-        if (!(val == "") && change_directory(val.c_str()) != 0)
+        /*if (!(val == "") && change_directory(val.c_str()) != 0)
         {
          cout << endl << "Cannot find directory:" << val.c_str() << "!" << endl;
          system("pause");
          return 0;
-        }
-        paramDirFound = 1;
+        }*/
+
+
+         readDirList.Add(val);
+         paramDirFound = 1;
        }
        else if (command == "out" || command == "-o")
        {
@@ -85,12 +95,16 @@ int main(int argc, char* argv[])
 
      KString selectDir = KString(sDir);
 
+
+       readDirList.Add(selectDir);
+
+/*
        if (!(selectDir == "") && change_directory(selectDir.c_str()) != 0)
      {
       cout << endl << "Cannot find directory!" << endl;
       system("pause");
       return 0;
-     }
+     }*/
 
     }
 
@@ -99,7 +113,7 @@ int main(int argc, char* argv[])
 
 
 
-   // _chdir("D:\\projects\\dolphin\\files\\test_data\\UploaderTrial_17_6_14");
+
 
 
       //system("mkdir out");
@@ -108,17 +122,10 @@ int main(int argc, char* argv[])
 
 
 
-   GList<KString>* fileList = KReader::GetDirFiles(".");
+//   GList<KString>* fileList = KReader::GetDirFiles(".");
 
 
-   DataReader* dataReader = new DataReader(".");
-
-
-
-
-   dataReader->Read();
-
-   dataReader->CalculateExtraData();
+   DataReader* dataReader = new DataReader();
 
    if (!(setOutDir == ""))
    {
@@ -127,6 +134,19 @@ int main(int argc, char* argv[])
 
     dataReader->SetOutDir(setOutDir);
    }
+
+
+   for (int i = 0; i < readDirList.GetSize(); i++)
+   {
+     dataReader->Read(readDirList.Get(i));
+   }
+   dataReader->FinishRead();
+
+   dataReader->CalculateExtraData();
+
+
+
+
 
    if (DataSettings::combineFiles == 0)
    {
@@ -178,8 +198,9 @@ int main(int argc, char* argv[])
      cout << "\nComplete! Press enter to exit.";
      cin >> r;*/
 
-
-     system("PAUSE");
+ #ifdef WIN32
+     //system("PAUSE");
+ #endif
 
 
 

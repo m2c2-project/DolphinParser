@@ -95,13 +95,13 @@
 1498582538 source:d:\projects\dolphin\data_parser\dataparser\datasettings.cpp
 	"DataSettings.h"
 
-1586202997 source:d:\projects\dolphin_parser\data.cpp
+1586199397 source:d:\projects\dolphin_parser\data.cpp
 	"Data.h"
 
-1586202997 d:\projects\dolphin_parser\data.h
+1586199397 d:\projects\dolphin_parser\data.h
 	"main.h"
 
-1586202997 d:\projects\dolphin_parser\main.h
+1586199397 d:\projects\dolphin_parser\main.h
 	"KString.h"
 	"GList.h"
 	"GMap.h"
@@ -110,7 +110,7 @@
 	<Direct.h>
 	"unistd.h"
 
-1590180987 d:\projects\dolphin_parser\kstring.h
+1610038072 d:\projects\dolphin_parser\kstring.h
 	<string>
 	<cstring>
 	<iostream>
@@ -120,50 +120,50 @@
 	"GList.h"
 	<cctype>
 
-1586202997 d:\projects\dolphin_parser\glist.h
+1586199397 d:\projects\dolphin_parser\glist.h
 	<vector>
 
-1586202997 d:\projects\dolphin_parser\gmap.h
+1586199397 d:\projects\dolphin_parser\gmap.h
 	"GList.h"
 
-1586202997 d:\projects\dolphin_parser\kreader.h
+1610038050 d:\projects\dolphin_parser\kreader.h
 	"GList.h"
 	<fstream>
 	<sys/types.h>
 	<sys/stat.h>
 	"dirent.h"
 
-1586202997 d:\projects\dolphin_parser\kwriter.h
+1586199397 d:\projects\dolphin_parser\kwriter.h
 	<fstream>
 	<ctime>
 
-1586202997 source:d:\projects\dolphin_parser\datafile.cpp
+1586199397 source:d:\projects\dolphin_parser\datafile.cpp
 	"DataFile.h"
 	"GameData.h"
 	"Data.h"
 	"DataSettings.h"
 
-1586202997 d:\projects\dolphin_parser\datafile.h
+1586199397 d:\projects\dolphin_parser\datafile.h
 	"main.h"
 
-1586202997 d:\projects\dolphin_parser\datasettings.h
+1586199397 d:\projects\dolphin_parser\datasettings.h
 	"main.h"
 
-1586202997 source:d:\projects\dolphin_parser\datareader.cpp
+1610041395 source:d:\projects\dolphin_parser\datareader.cpp
 	"DataReader.h"
 	"Data.h"
 	"DataFile.h"
 
-1586202997 d:\projects\dolphin_parser\datareader.h
+1610039104 d:\projects\dolphin_parser\datareader.h
 	"main.h"
 
-1586202997 source:d:\projects\dolphin_parser\datareader_calcextradata.cpp
+1586199397 source:d:\projects\dolphin_parser\datareader_calcextradata.cpp
 	"DataReader.h"
 	"Data.h"
 	"KWriter.h"
 	"DataFile.h"
 
-1602203797 source:d:\projects\dolphin_parser\datareader_gamedir.cpp
+1610038753 source:d:\projects\dolphin_parser\datareader_gamedir.cpp
 	"DataReader.h"
 	"Data.h"
 	"DataFile.h"
@@ -171,44 +171,44 @@
 	"LogData.h"
 	"DataSettings.h"
 
-1586202997 source:d:\projects\dolphin_parser\datareader_readsettings.cpp
+1586199397 source:d:\projects\dolphin_parser\datareader_readsettings.cpp
 	"DataReader.h"
 	"KReader.h"
 	"DataSettings.h"
 
-1586202997 source:d:\projects\dolphin_parser\datasettings.cpp
+1586199397 source:d:\projects\dolphin_parser\datasettings.cpp
 	"DataSettings.h"
 
-1586210395 source:d:\projects\dolphin_parser\main.cpp
+1610041398 source:d:\projects\dolphin_parser\main.cpp
 	<iostream>
 	"main.h"
 	"DataReader.h"
 	"DataSettings.h"
 
-1586202997 source:d:\projects\dolphin_parser\datareader_writer.cpp
+1586199397 source:d:\projects\dolphin_parser\datareader_writer.cpp
 	"DataReader.h"
 	"Data.h"
 	"DataFile.h"
 	"DataSettings.h"
 	"GameData.h"
 
-1602204057 source:d:\projects\dolphin_parser\datareader_writeseparate.cpp
+1602200457 source:d:\projects\dolphin_parser\datareader_writeseparate.cpp
 	"DataReader.h"
 	"Data.h"
 	"DataFile.h"
 	"DataSettings.h"
 	"GameData.h"
 
-1602199193 d:\projects\dolphin_parser\gamedata.h
+1602195593 d:\projects\dolphin_parser\gamedata.h
 	"main.h"
 
-1602199318 source:d:\projects\dolphin_parser\gamedata.cpp
+1602195718 source:d:\projects\dolphin_parser\gamedata.cpp
 	"GameData.h"
 	"DataSettings.h"
 
-1602203822 d:\projects\dolphin_parser\logdata.h
+1602200222 d:\projects\dolphin_parser\logdata.h
 	"GameData.h"
 
-1602203700 source:d:\projects\dolphin_parser\logdata.cpp
+1602200100 source:d:\projects\dolphin_parser\logdata.cpp
 	"LogData.h"
 

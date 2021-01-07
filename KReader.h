@@ -171,7 +171,7 @@ bool HasNextLine()
 
    DIR *dir;
      struct dirent *ent;
-      //c:\\
+
       // http://stackoverflow.com/questions/612097/how-can-i-get-the-list-of-files-in-a-directory-using-c-or-c
     if ((dir = opendir (dirGet.c_str())) != NULL) {
    /* print all the files and directories within directory */

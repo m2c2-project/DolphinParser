@@ -2,3 +2,5 @@
 *.exe
 out/*
 dolph_parser
+bin
+a.out

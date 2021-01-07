@@ -29,10 +29,10 @@ class DataReader
  private:
   KString outputDir;
  public:
-  DataReader(KString startPath);
+  DataReader();
   ~DataReader();
 
-  KString path;
+  //KString path;
 
 
   void AddDataFile(KString filename);
@@ -53,14 +53,15 @@ class DataReader
 
   static KString GetEndLine();
 
-  
+
 
   KString GetOutDir();
   void SetOutDir(KString dir);
 
 
 
-  void Read();
+  void Read(KString path);
+  void FinishRead();
 
   void CalculateExtraData();
 
