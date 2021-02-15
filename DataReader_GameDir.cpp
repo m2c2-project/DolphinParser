@@ -65,7 +65,8 @@ void DataReader::ReadDirectory(KString dirPath)
      // int cogtaskNameI = gameData->headerList.FindElement("cogtask_name");
      // if (cogtaskNameI > -1)
       {
-        if (gameData->dataLineMap.GetSize() > 0)
+        // check to see if "cogtask_name" is in the data file. if not, use the original gameName from the file name.
+        if (gameData->dataLineMap.GetSize() > 0 && (gameData->dataLineMap.Get(0))->Contains("cogtask_name") )
         {
           gameData->name = (gameData->dataLineMap.Get(0))->Get2("cogtask_name");
           gameData->name.Replace(" ", "-");

@@ -29,7 +29,7 @@ void my_mkdir(const char* path)
 int main(int argc, char* argv[])
 {
 
-    DataReader::ReadSettingsFile("parser_settings.txt");
+
 
 
 
@@ -45,6 +45,8 @@ int main(int argc, char* argv[])
 
      int paramDirFound = 0; // true when the directory to read was set in the command line params
 
+
+      KString parserSettingsFile = "parser_settings.txt";
 
      GList<KString> readDirList;
 
@@ -78,8 +80,16 @@ int main(int argc, char* argv[])
        {
          setOutDir = val;
        }
+       else if (command == "settings" || command == "-s")
+       {
+          parserSettingsFile = val;
+       }
 
     }
+
+
+
+        DataReader::ReadSettingsFile(parserSettingsFile);
 
 
 
