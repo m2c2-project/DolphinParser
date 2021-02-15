@@ -31,7 +31,7 @@ void DataReader::ReadDirectory(KString dirPath)
     {
      // - found game read game file
 
-     GList<KString> split = fileList->Get(i).Split('_');
+     GList<KString> split = fileSplit;
 
      if (split.GetSize() > DataSettings::gameNameSplitIndex)
      {
